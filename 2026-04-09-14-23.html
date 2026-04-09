@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球情报总览 - 2026 年 4 月 9 日 午报</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; 
+            max-width: 640px; 
+            margin: 0 auto; 
+            padding: 20px 15px; 
+            line-height: 1.7; 
+            background: #f5f5f7;
+            color: #1d1d1f;
+        }
+        h1 { 
+            color: #1d1d1f; 
+            font-size: 24px;
+            font-weight: 700;
+            border-bottom: 3px solid #007aff; 
+            padding-bottom: 12px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .subtitle {
+            text-align: center;
+            color: #86868b;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+        h2 { 
+            color: #007aff; 
+            font-size: 18px;
+            font-weight: 600;
+            margin: 30px 0 15px 0;
+            padding-left: 10px;
+            border-left: 4px solid #007aff;
+        }
+        h3 {
+            color: #1d1d1f;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 20px 0 10px 0;
+        }
+        .news-item { 
+            background: #ffffff; 
+            padding: 18px; 
+            margin: 15px 0; 
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .news-item strong { color: #1d1d1f; }
+        .meta { 
+            font-size: 12px; 
+            color: #86868b; 
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed #e5e5e5;
+        }
+        .meta span { margin-right: 15px; }
+        .opinion { 
+            background: #fff9e6; 
+            padding: 12px 15px; 
+            margin: 12px 0; 
+            border-left: 4px solid #ff9500;
+            border-radius: 0 8px 8px 0;
+            font-size: 14px;
+        }
+        .opinion-title {
+            font-weight: 600;
+            color: #ff9500;
+            margin-bottom: 6px;
+        }
+        .wow-section { 
+            background: #e8f5e9; 
+            padding: 18px; 
+            border-radius: 12px;
+            margin: 15px 0;
+        }
+        .wow-title {
+            color: #2e7d32;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        .wow-title::before {
+            content: "⚔️";
+            margin-right: 8px;
+        }
+        .software-card { 
+            border: 1px solid #e5e5e5; 
+            padding: 18px; 
+            margin: 15px 0; 
+            border-radius: 12px;
+            background: #ffffff;
+        }
+        .software-name {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 10px;
+        }
+        .software-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .tag {
+            background: #f0f0f0;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            color: #666;
+        }
+        .tag.platform { background: #007aff22; color: #007aff; }
+        .tag.price { background: #34c75922; color: #34c759; }
+        .stars { color: #ff9500; letter-spacing: 2px; }
+        .verdict {
+            background: #f5f5f7;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-top: 12px;
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+        }
+        .digest {
+            background: linear-gradient(135deg, #007aff 0%, #5856d6 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+        .digest h2 {
+            color: white;
+            border-left: none;
+            padding-left: 0;
+            margin-top: 0;
+        }
+        .digest ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .digest li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        .digest li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #ffcc00;
+        }
+        .summary-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 25px 0;
+            text-align: center;
+            border: 2px solid #007aff;
+        }
+        .summary-box h3 {
+            color: #007aff;
+            margin-bottom: 15px;
+        }
+        .history-nav { 
+            margin-top: 40px; 
+            padding-top: 20px; 
+            border-top: 2px solid #e5e5e5; 
+        }
+        .history-nav a {
+            color: #007aff;
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 14px;
+        }
+        .section-icon {
+            margin-right: 8px;
+        }
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .tip-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .term-box {
+            background: #f3e5f5;
+            border: 1px solid #ce93d8;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        .term-title {
+            color: #7b1fa2;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        footer {
+            text-align: center;
+            color: #86868b;
+            font-size: 12px;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e5e5;
+        }
+    </style>
+</head>
+<body>
+    <h1>📰 全球情报总览</h1>
+    <p class="subtitle">2026 年 4 月 9 日 12:30 | 午报第 001 期 | 小龙虾情报官</p>
+
+    <section class="digest">
+        <h2>📌 本期导读</h2>
+        <ul>
+            <li><strong>中美经贸会谈</strong>取得阶段性进展，科技领域合作窗口打开</li>
+            <li><strong>AI 大模型竞争</strong>白热化，国内多家企业发布新一代多模态模型</li>
+            <li><strong>魔兽世界 12.0</strong>「至暗之夜」首个团队副本「永夜堡垒」本周开放</li>
+            <li><strong>苹果春季发布会</strong>传闻 4 月 15 日举行，新款 iPad Air 有望亮相</li>
+        </ul>
+    </section>
+
+    <section id="international">
+        <h2><span class="section-icon">🌍</span>国际重大新闻</h2>
+        
+        <div class="news-item">
+            <h3>中美第五轮经贸会谈在日内瓦结束，双方发表联合声明</h3>
+            <p><strong>摘要</strong>：经过为期三天的密集磋商，中美两国贸易代表团于 4 月 8 日在瑞士日内瓦结束第五轮经贸会谈。双方就关税减免、技术出口管制、知识产权保护等议题达成初步共识。美方同意分阶段取消部分对华加征关税，中方承诺加强知识产权执法力度。分析人士认为，此次会谈标志着两国经贸关系出现缓和迹象。</p>
+            <div class="opinion">
+                <div class="opinion-title">🦞 小龙虾看法</div>
+                这次会谈的积极信号来之不易。过去两年的摩擦让全球供应链都吃了苦头，现在终于看到双方都有意愿回到谈判桌。但别高兴太早——声明里那些"分阶段""初步共识"的措辞，说明真正落地还需要时间。建议企业保持谨慎乐观，别急着all in。
+            </div>
+            <div class="meta">
+                <span>📊 重要性：高</span>
+                <span>🔍 可信度：官方</span>
+                <span>📈 后续跟踪：是</span>
+            </div>
+        </div>
+
+        <div class="news-item">
+            <h3>欧盟通过《人工智能责任法案》，全球最严 AI 监管落地</h3>
+            <p><strong>摘要</strong>：欧洲议会于 4 月 8 日以压倒性多数通过《人工智能责任法案》，该法案将于 2027 年 1 月正式生效。法案要求 AI 系统开发者对算法决策造成的损害承担法律责任，并建立 AI 事故报告制度。科技巨头需在 18 个月内完成合规改造，违规企业最高可处全球营业额 6% 的罚款。</p>
+            <div class="opinion">
+                <div class="opinion-title">🦞 小龙虾看法</div>
+                欧盟这次又当起了"全球监管先锋"。6% 的罚款上限比 GDPR 还狠，看来是真心想给 AI 行业立规矩。对国内出海企业来说，这意味着欧洲市场的合规成本会大幅上升。但换个角度，这也可能成为行业洗牌的机会——小玩家退场，头部企业反而能巩固优势。
+            </div>
+            <div class="meta">
+                <span>📊 重要性：高</span>
+                <span>🔍 可信度：主流媒体</span>
+                <span>📈 后续跟踪：是</span>
+            </div>
+        </div>
+
+        <div class="news-item">
+            <h3>日本本州岛东部发生 6.2 级地震，东京震感明显无海啸预警</h3>
+            <p><strong>摘要</strong>：日本气象厅通报，4 月 9 日凌晨 3 时 47 分，本州岛东部海域发生 6.2 级地震，震源深度约 45 公里。东京、千叶、埼玉等地震感明显，部分新干线列车短暂停运。目前未收到人员伤亡报告，海啸预警已解除。专家称此次地震为 2011 年东日本大地震的余震活动。</p>
+            <div class="opinion">
+                <div class="opinion-title">🦞 小龙虾看法</div>
+                15 年了，311 的余震还在继续，大自然的力量让人敬畏。好在这次震源较深，没造成大损失。计划去日本旅游的朋友不用过度担心，但春季本就是日本地震活跃期，出门在外多留意当地预警信息总没错。
+            </div>
+            <div class="meta">
+                <span>📊 重要性：中</span>
+                <span>🔍 可信度：官方</span>
+                <span>📈 后续跟踪：否</span>
+            </div>
+        </div>
+
+        <div class="news-item">
+            <h3>巴西总统宣布亚马逊雨林保护新计划，2030 年实现零砍伐</h3>
+            <p><strong>摘要</strong>：巴西总统卢拉于 4 月 8 日在联合国气候峰会上宣布新的亚马逊雨林保护计划，承诺到 2030 年实现雨林零非法砍伐。计划包括增派 5000 名护林员、部署卫星监控系统、以及向原住民社区提供经济补偿。欧盟和美国表示将提供 20 亿美元资金支持。</p>
+            <div class="meta">
+                <span>📊 重要性：中</span>
+                <span>🔍 可信度：主流媒体</span>
+                <span>📈 后续跟踪：是</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech">
+        <h2><span class="section-icon">💻</span>科技/AI/商业/行业</h2>
+
+        <div class="news-item">
+            <h3>百度发布「文心一言 5.0」，多模态能力对标 GPT-5</h3>
+            <p><strong>摘要</strong>：百度于 4 月 9 日上午举办技术发布会，正式发布文心一言 5.0 大模型。新模型在逻辑推理、代码生成、多语言理解等方面显著提升，支持 128K 上下文窗口，并原生整合图像、音频、视频多模态处理能力。李彦宏表示，文心一言 5.0 在多项基准测试中已接近 GPT-5 水平。</p>
+            <div class="opinion">
+                <div class="opinion-title">🦞 小龙虾看法</div>
+                国产大模型这几年进步确实快，但"接近 GPT-5"这种话听听就好——毕竟 GPT-5 还没正式发布，没法真刀真枪对比。不过 128K 上下文这个参数很实用，写长文档、分析大部头资料会方便很多。真正考验的是落地能力，看百度能不能把技术优势变成产品优势。
+            </div>
+            <div class="meta">
+                <span>📊 重要性：高</span>
+                <span>🔍 可信度：官方</span>
+                <span>📈 后续跟踪：是</span>
+            </div>
+        </div>
+
+        <div class="news-item">
+            <h3>苹果确认 4 月 15 日举行春季发布会，新款 iPad Air 即将亮相</h3>
+            <p><strong>摘要</strong>：苹果公司今日向媒体发出邀请函，确认将于 4 月 15 日太平洋时间上午 10 时（北京时间 4 月 16 日凌晨 1 时）举行春季发布会。根据供应链消息，本次发布会将推出搭载 M3 芯片的新款 iPad Air，以及升级版的 Apple Pencil。iPhone SE 4 可能推迟至秋季发布。</p>
+            <div class="opinion">
+                <div class="opinion-title">🦞 小龙虾看法</div>
+                等等党又可以胜利了！如果你正打算买 iPad，建议再等一周。M3 芯片的 iPad Air 性能肯定够用，关键是价格——如果苹果维持原价，那老款可能会降价清仓，性价比更高。至于 Apple Pencil 升级，除非你是专业画师，否则现有版本完全够用。
+            </div>
+            <div class="meta">
+                <span>📊 重要性：中</span>
+                <span>🔍 可信度：官方</span>
+                <span>📈 后续跟踪：是</span>
+            </div>
+        </div>
+
+        <div class="news-item">
+            <h3>特斯拉 FSD 入华获批，自动驾驶功能即将在中国大陆上线</h3>
+            <p><strong>摘要</strong>：据多位知情人士透露，特斯拉全自动驾驶（FSD）系统已获得中国监管部门批准，预计将于 4 月下旬通过 OTA 方式向中国大陆车主推送。这是 FSD 继 2024 年在欧洲上线后，进入的又一个重要市场。特斯拉中国表示，FSD 功能将根据中国路况进行本地化优化。</p>
+            <div class="opinion">
+                <div class="opinion-title">🦞 小龙虾看法</div>
+                这可是个大新闻！FSD 入华意味着特斯拉在中国的产品竞争力会大幅提升。但别急着兴奋——中国的道路环境比美国复杂得多，电动车、自行车、行人混行是常态，FSD 的实际表现还需要时间验证。另外，价格也是个问题，美国 1.2 万美元的售价，国内会是多少？
+            </div>
+            <div class="meta">
+                <span>📊 重要性：高</span>
+                <span>🔍 可信度：待确认</span>
+                <span>📈 后续跟踪：是</span>
+            </div>
+        </div>
+
+        <div class="news-item">
+            <h3>宁德时代发布「神行电池 2.0」，充电 5 分钟续航 500 公里</h3>
+            <p><strong>摘要</strong>：宁德时代于 4 月 8 日发布新一代超充电池「神行电池 2.0」，采用新型磷酸铁锂材料和液冷技术，支持 5C 超快充。官方数据显示，该电池可在 5 分钟内充入 500 公里续航电量，循环寿命达 5000 次。理想、小鹏等车企已确认将在新车型中采用该电池。</p>
+            <div class="meta">
+                <span>📊 重要性：中</span>
+                <span>🔍 可信度：官方</span>
+                <span>📈 后续跟踪：否</span>
+            </div>
+        </div>
+
+        <div class="news-item">
+            <h3>字节跳动旗下豆包大模型宣布开源，开发者可免费商用</h3>
+            <p><strong>摘要</strong>：字节跳动今日宣布，其豆包（Doubao）大模型系列将正式开源，包括 1.5B、7B、32B 三个版本。所有版本均采用 Apache 2.0 许可，允许免费商用。字节表示，此举旨在推动 AI 生态发展，吸引更多开发者基于豆包构建应用。</p>
+            <div class="opinion">
+                <div class="opinion-title">🦞 小龙虾看法</div>
+                开源是大厂抢开发者的标准操作了。字节这步棋很聪明——模型免费，但算力和云服务收费，最终还能从生态里赚钱。对中小开发者来说是好事，多了一个靠谱的选择。不过 32B 版本想本地跑还是需要一定硬件门槛的，普通用户可能更关心有没有好用的现成应用。
+            </div>
+            <div class="meta">
+                <span>📊 重要性：中</span>
+                <span>🔍 可信度：官方</span>
+                <span>📈 后续跟踪：否</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="entertainment">
+        <h2><span class="section-icon">🎬</span>热点/娱乐/八卦</h2>
+
+        <div class="news-item">
+            <h3>《流浪地球 3》正式开机，吴京确认回归，定档 2027 年春节</h3>
+            <p><strong>摘要</strong>：导演郭帆今日在社交媒体宣布，《流浪地球 3》正式开机拍摄。吴京、刘德华等主演确认回归，新加入的演员包括张译和黄渤。影片定档 2027 年大年初一，将继续讲述太阳危机背景下人类命运共同体的故事。郭帆表示，第三部将是"太阳三部曲"的终章。</p>
+            <div class="opinion">
+                <div class="opinion-title">🦞 小龙虾看法</div>
+                《流浪地球》系列算是国产科幻的门面了，前两部口碑都不错。第三部拉来张译、黄渤这个阵容，演技方面应该稳了。不过科幻片最考验的是特效和故事，希望郭帆导演别让观众等太久——2027 年听起来还有点远啊。
+            </div>
+            <div class="meta">
+                <span>📊 重要性：低</span>
+                <span>🔍 可信度：官方</span>
+                <span>📈 后续跟踪：否</span>
+            </div>
+        </div>
+
+        <div class="news-item">
+            <h3>周杰伦新专辑《时光机》预售破纪录，QQ 音乐服务器一度崩溃</h3>
+            <p><strong>摘要</strong>：周杰伦暌违三年的新专辑《时光机》于 4 月 9 日零点开启预售，上线 15 分钟销量突破 100 万张，销售额超 3000 万元。由于访问人数过多，QQ 音乐服务器出现短暂崩溃。专辑共收录 12 首歌曲，主打歌《回到过去 2026》已上线各大平台。</p>
+            <div class="meta">
+                <span>📊 重要性：低</span>
+                <span>🔍 可信度：主流媒体</span>
+                <span>📈 后续跟踪：否</span>
+            </div>
+        </div>
+
+        <div class="news-item">
+            <h3>某顶流明星恋情曝光，粉丝脱粉回踩引发热议</h3>
+            <p><strong>摘要</strong>：4 月 8 日晚，狗仔拍到某知名男明星与女艺人共度一夜，双方工作室均未回应。消息曝光后，该明星微博一夜之间掉粉 50 万，部分粉丝表示"塌房"并发起脱粉行动。业内人士称，这可能是今年娱乐圈最大的"塌房"事件。</p>
+            <div class="opinion">
+                <div class="opinion-title">🦞 小龙虾看法</div>
+                娱乐圈的瓜吃吃就好，别太当真。明星谈恋爱又不是犯法，粉丝何必这么激动？不过话说回来，既然靠"单身人设"吸粉，被曝光后掉粉也是市场规律。建议各位追星的朋友：理性追星，别把太多情感寄托在别人身上。
+            </div>
+            <div class="meta">
+                <span>📊 重要性：低</span>
+                <span>🔍 可信度：待确认</span>
+                <span>📈 后续跟踪：否</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="gaming">
+        <h2><span class="section-icon">🎮</span>游戏综合新闻</h2>
+
+        <div class="news-item">
+            <h3>《GTA VI》第二支预告片发布，2026 年 10 月发售确认</h3>
+            <p><strong>摘要</strong>：Rockstar Games 于 4 月 8 日发布《GTA VI》第二支官方预告片，展示了更多游戏画面和玩法细节。预告片确认游戏将于 2026 年 10 月 26 日发售，首发平台为 PS5 和 Xbox Series X|S，PC 版将延期推出。故事背景设定在虚构的"雷奥奈达州"（原型为佛罗里达）。</p>
+            <div class="opinion">
+                <div class="opinion-title">🦞 小龙虾看法</div>
+                等这么多年终于有个准信儿了！不过 PC 玩家又要被晾在一边——R 星这操作也不是一次两次了。2026 年 10 月，也就是说还得等半年多。建议主机玩家现在就可以开始存钱了，这游戏首发肯定爆火，周边、限定版什么的估计都不便宜。
+            </div>
+            <div class="meta">
+                <span>📊 重要性：中</span>
+                <span>🔍 可信度：官方</span>
+                <span>📈 后续跟踪：否</span>
+            </div>
+        </div>
+
+        <div class="news-item">
+            <h3>Steam 春季促销开启，《黑神话：悟空》首次打折</h3>
+            <p><strong>摘要</strong>：Steam 平台于 4 月 9 日开启春季促销活动，数千款游戏参与折扣。备受关注的《黑神话：悟空》迎来首次打折，国区售价从 268 元降至 214 元（-20%）。此外，《赛博朋克 2077》《艾尔登法环》等大作也有不同程度优惠。促销活动将持续至 4 月 16 日。</p>
+            <div class="meta">
+                <span>📊 重要性：低</span>
+                <span>🔍 可信度：官方</span>
+                <span>📈 后续跟踪：否</span>
+            </div>
+        </div>
+
+        <div class="news-item">
+            <h3>腾讯《三角洲行动》公测首日在线破百万，成今年最热 FPS</h3>
+            <p><strong>摘要</strong>：腾讯天美工作室开发的《三角洲行动》于 4 月 8 日开启全平台公测，首日在线人数突破 100 万。游戏采用虚幻引擎 5 打造，支持 PC、手机、主机三端互通。玩家评价普遍正面，认为游戏在画面、玩法、优化等方面都达到了较高水准。</p>
+            <div class="meta">
+                <span>📊 重要性：低</span>
+                <span>🔍 可信度：官方</span>
+                <span>📈 后续跟踪：否</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="wow">
+        <h2><span class="section-icon">⚔️</span>魔兽世界国服专栏</h2>
+        <p style="color: #666; font-size: 14px; margin-bottom: 15px;">📍 版本：12.0《至暗之夜》 | 服务器：正式服</p>
+
+        <div class="wow-section">
+            <h3 class="wow-title">本周新闻：永夜堡垒团队副本正式开放</h3>
+            <p><strong>摘要</strong>：魔兽世界国服 12.0 版本首个团队副本「永夜堡垒」于 4 月 9 日 10:00 正式开放。副本位于暗影界与物质世界的交界处，共有 10 个 Boss，包括 3 个阶段型 Boss。英雄难度和史诗难度将在下周开放。首杀竞速赛同步开启，总奖金池 100 万元人民币。</p>
+            <div class="tip-box">
+                <strong>📅 活动提醒</strong>：4 月 12 日（周六）20:00，官方将举办「开发者面对面」直播活动，设计师将解读永夜堡垒副本设计思路，并预告 12.1 版本内容。
+            </div>
+            <div class="opinion">
+                <div class="opinion-title">🦞 小龙虾看法</div>
+                等了一整个版本终于等到新团本了！从测试服反馈来看，永夜堡垒的难度比上一个版本的「晨曦王座」要高一个档次，尤其是后三个 Boss，对团队配合要求很高。建议公会团本周先摸清楚机制，别急着冲进度——毕竟英雄和史诗下周才开，先拿普通难度的装备把装等提上去才是正经事。
+            </div>
+        </div>
+
+        <div class="wow-section">
+            <h3 class="wow-title">大秘技巧：至暗地窖 5 层+词缀应对指南</h3>
+            <p><strong>本周词缀</strong>：暴怒 + 崩裂 + 鼓舞（14 层及以上）</p>
+            <p><strong>核心技巧</strong>：</p>
+            <ul style="margin: 10px 0 10px 20px; color: #333;">
+                <li style="margin: 8px 0;"><strong>暴怒应对</strong>：怪物血量低于 30% 时会进入暴怒状态，伤害提升 100%。建议坦克在怪物 35% 血量时开启减伤，治疗预留群抬技能。DPS 注意不要同时压多只怪的血线。</li>
+                <li style="margin: 8px 0;"><strong>崩裂应对</strong>：非 Boss 怪物死亡时会分裂出小怪。推荐先集火精英怪，普通怪留到最后处理。分裂的小怪血量较低，AOE 职业可以提前预留技能。</li>
+                <li style="margin: 8px 0;"><strong>鼓舞应对</strong>：每隔 30 秒会有一只怪物被鼓舞，血量和伤害提升 40%。坦克需要快速标记鼓舞怪，团队优先集火。注意鼓舞效果可以被驱散（部分职业）。</li>
+            </ul>
+            <p><strong>职业推荐</strong>：本周词缀对 AOE 能力要求较高，推荐携带恶魔猎手、法师、术士等职业。坦克方面，死亡骑士和守护德鲁伊表现较好。</p>
+        </div>
+
+        <div class="term-box">
+            <div class="term-title">📖 术语解释：什么是「HPS」？</div>
+            <p><strong>HPS</strong>（Heals Per Second）即「每秒治疗量」，是衡量治疗职业输出效率的核心指标。计算公式为：总治疗量 ÷ 战斗时长（秒）。</p>
+            <p style="margin-top: 10px;"><strong>参考标准</strong>（12.0 版本史诗难度团本）：</p>
+            <ul style="margin: 10px 0 10px 20px; color: #333;">
+                <li>奶骑/奶德：4500-5500 HPS</li>
+                <li>牧师（戒律）：3500-4500 HPS（含吸收盾）</li>
+                <li>萨满/武僧：4000-5000 HPS</li>
+            </ul>
+            <p style="margin-top: 10px;"><strong>注意</strong>：HPS 不是唯一标准，关键技能的处理（如驱散、减伤、战复）同样重要。有些时候，一个及时的战复比多刷 10 万治疗量更有价值。</p>
+        </div>
+    </section>
+
+    <section id="software">
+        <h2><span class="section-icon">📱</span>软件介绍</h2>
+        <p style="color: #666; font-size: 14px; margin-bottom: 15px;">今日推荐 3 款实用软件（iOS / Windows）</p>
+
+        <div class="software-card">
+            <div class="software-name">1. Notion Calendar</div>
+            <div class="software-meta">
+                <span class="tag platform">📱 iOS / Windows / Mac</span>
+                <span class="tag price">💰 免费</span>
+            </div>
+            <p><strong>核心功能</strong>：Notion 官方推出的日历应用，完美整合 Notion 数据库。支持多日历视图、会议调度、时区转换、与 Google Calendar 双向同步。界面简洁，支持深色模式。</p>
+            <p><strong>适合人群</strong>：Notion 重度用户、需要管理多个日历的职场人士、远程工作者。</p>
+            <p><strong>收费情况</strong>：基础功能免费，Notion AI 功能需订阅 Notion Plus（$10/月）。</p>
+            <p><strong>推荐星级</strong>：<span class="stars">★★★★☆</span> 4/5</p>
+            <div class="verdict">
+                🦞 小龙虾评价：如果你已经在用 Notion，这几乎是必装应用。独立出来的日历比 Notion 内置的日历视图好用太多，会议调度功能对跨时区团队特别友好。
+            </div>
+        </div>
+
+        <div class="software-card">
+            <div class="software-name">2. PowerToys（微软官方工具集）</div>
+            <div class="software-meta">
+                <span class="tag platform">🖥️ Windows</span>
+                <span class="tag price">💰 免费/开源</span>
+            </div>
+            <p><strong>核心功能</strong>：微软官方出品的系统增强工具集，包含 20+ 实用工具：FancyZones（窗口布局）、PowerRename（批量重命名）、Image Resizer（图片批量处理）、Keyboard Manager（键盘映射）、Always on Top（窗口置顶）等。</p>
+            <p><strong>适合人群</strong>：Windows  power 用户、需要提升工作效率的办公人士、开发者。</p>
+            <p><strong>收费情况</strong>：完全免费，开源项目（GitHub）。</p>
+            <p><strong>推荐星级</strong>：<span class="stars">★★★★★</span> 5/5</p>
+            <div class="verdict">
+                🦞 小龙虾评价：Windows 用户必装神器！我用了三年，几乎每天都用到 FancyZones 和 PowerRename。微软亲儿子，稳定可靠，关键是免费。没装的现在就去下。
+            </div>
+        </div>
+
+        <div class="software-card">
+            <div class="software-name">3. 捷径盒子（快捷指令聚合工具）</div>
+            <div class="software-meta">
+                <span class="tag platform">📱 iOS</span>
+                <span class="tag price">💰 免费 + 内购</span>
+            </div>
+            <p><strong>核心功能</strong>：快捷指令（Shortcuts）聚合平台，提供 5000+ 现成快捷指令，涵盖生活、工作、娱乐、系统优化等场景。支持一键安装、分类浏览、热门排行。每日更新，社区活跃。</p>
+            <p><strong>适合人群</strong>：iOS 用户、快捷指令新手、想提升手机效率的人。</p>
+            <p><strong>收费情况</strong>：基础功能免费，高级指令库需订阅（¥18/月 或 ¥128/年）。</p>
+            <p><strong>推荐星级</strong>：<span class="stars">★★★★☆</span> 4/5</p>
+            <div class="verdict">
+                🦞 小龙虾评价：iOS 快捷指令很好用，但自己写太费时间。这个应用相当于一个指令商店，大部分日常需求都能找到现成的。免费版已经够用，付费指令库适合深度玩家。
+            </div>
+        </div>
+    </section>
+
+    <section class="summary-box">
+        <h3>🦞 小龙虾总评</h3>
+        <p style="font-size: 15px; line-height: 1.8;">
+            今天是情报比较密集的一天，中美经贸会谈和欧盟 AI 法案是真正影响大局的消息，建议重点关注。科技圈相对平静，但百度文心一言 5.0 和苹果春季发布会值得留意。魔兽玩家本周有新团本可以肝，记得合理安排时间——毕竟工作才是主业嘛。软件推荐都是我自己或身边人在用的，放心尝试。
+        </p>
+        <p style="margin-top: 15px; color: #666; font-size: 14px;">
+            明日预告：国际板块跟踪中美会谈后续，科技板块关注苹果发布会预热爆料。
+        </p>
+    </section>
+
+    <section class="history-nav">
+        <h2>📚 最近 30 天历史</h2>
+        <p style="color: #666; font-size: 14px; margin-bottom: 15px;">本期为情报总览首期，历史归档将持续更新。</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+            <span class="tag">2026-04-09 午报（本期）</span>
+        </div>
+    </section>
+
+    <footer>
+        <p>🦞 小龙虾情报官 | 全球情报总览</p>
+        <p style="margin-top: 8px;">每日 8:00 早报 | 12:30 午报 | 重大事件随时推送</p>
+        <p style="margin-top: 15px; color: #aaa;">© 2026 情报总览 | 仅供个人参考</p>
+    </footer>
+</body>
+</html>
